@@ -5,73 +5,74 @@
 </head>
 <body>
   <h1>New Client</h1>
-  <%= form_with(model: @client) do |form| %>
+  <%= form_with(model: @client) do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
     <div>
-      <%= form.label :client_firstname %>
-      <%= form.text_field :client_firstname %>
+      <%= f.label :client_firstname %>
+      <%= f.text_field :client_firstname %>
     </div>
     <div>
-      <%= form.label :client_lastname %>
-      <%= form.text_field :client_lastname %>
+      <%= f.label :client_lastname %>
+      <%= f.text_field :client_lastname %>
     </div>
     <div>
-      <%= form.label :client_firstname_kana %>
-      <%= form.text_field :client_firstname_kana %>
+      <%= f.label :client_firstname_kana %>
+      <%= f.text_field :client_firstname_kana %>
     </div>
     <div>
-      <%= form.label :client_lastname_kana %>
-      <%= form.text_field :client_lastname_kana %>
+      <%= f.label :client_lastname_kana %>
+      <%= f.text_field :client_lastname_kana %>
     </div>
     <div>
-      <%= form.label :birthday %>
-      <%= form.date_field :birthday %>
+      <%= f.label :birthday %>
+      <%= f.date_field :birthday %>
     </div>
     <div>
-      <%= form.label :gender_id %>
-      <%= form.select :gender_id, options_for_select(Gender.all.map { |gender| [gender.name, gender.id] }) %>
+      <%= f.label :gender_id %>
+      <%= f.select :gender_id, options_for_select(Gender.all.map { |gender| [gender.name, gender.id] }) %>
     </div>
     <div>
-      <%= form.label :post_code %>
-      <%= form.text_field :post_code %>
+      <%= f.label :post_code %>
+      <%= f.text_field :post_code %>
     </div>
     <div>
-      <%= form.label :prefecture_id %>
-      <%= form.select :prefecture_id, options_for_select(Prefecture.all.map { |prefecture| [prefecture.name, prefecture.id] }) %>
+      <%= f.label :prefecture_id %>
+      <%= f.select :prefecture_id, options_for_select(Prefecture.all.map { |prefecture| [prefecture.name, prefecture.id] }) %>
     </div>
     <div>
-      <%= form.label :municipality %>
-      <%= form.text_field :municipality %>
+      <%= f.label :municipality %>
+      <%= f.text_field :municipality %>
     </div>
     <div>
-      <%= form.label :address %>
-      <%= form.text_field :address %>
+      <%= f.label :address %>
+      <%= f.text_field :address %>
     </div>
     <div>
-      <%= form.label :building_name %>
-      <%= form.text_field :building_name %>
+      <%= f.label :building_name %>
+      <%= f.text_field :building_name %>
     </div>
     <div>
-      <%= form.label :phone_number %>
-      <%= form.text_field :phone_number %>
+      <%= f.label :phone_number %>
+      <%= f.text_field :phone_number %>
     </div>
     <div>
-      <%= form.label :mobile_number %>
-      <%= form.text_field :mobile_number %>
+      <%= f.label :mobile_number %>
+      <%= f.text_field :mobile_number %>
     </div>
     <div>
-      <%= form.label :company_name %>
-      <%= form.text_field :company_name %>
+      <%= f.label :company_name %>
+      <%= f.text_field :company_name %>
     </div>
     <div>
-      <%= form.label :project %>
-      <%= form.text_area :project %>
+      <%= f.label :project %>
+      <%= f.text_area :project %>
     </div>
     <div>
-      <%= form.label :note %>
-      <%= form.text_area :note %>
+      <%= f.label :note %>
+      <%= f.text_area :note %>
     </div>
     <div>
-      <%= form.submit "Create Client" %>
+      <%= f.submit "Create Client" %>
     </div>
   <% end %>
 </body>
