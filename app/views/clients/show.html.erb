@@ -6,8 +6,22 @@
 <body>
   <h1><%= "#{@client.client_lastname}様の顧客情報" %></h1>
 
-  <h2><%= "基本情報" %></h2>
+  <h2>基本情報</h2>
+  <p>氏名: <%= "#{@client.client_lastname} #{@client.client_firstname}" %></p>
+  <p>フリガナ: <%= "#{@client.client_lastname_kana} #{@client.client_firstname_kana}" %></p>
+  <p>生年月日: <%= @client.birthday %></p>
+  <p>性別: <%= @client.gender.name %></p>
+  <p>郵便番号: <%= @client.post_code %></p>
+  <p>都道府県: <%= @client.prefecture.name %></p>
+  <p>市区町村: <%= @client.municipality %></p>
+  <p>番地: <%= @client.address %></p>
+  <p>建物名: <%= @client.building_name %></p>
+  <p>ご自宅番号: <%= @client.phone_number %></p>
+  <p>携帯番号: <%= @client.mobile_number %></p>
+  <p>会社名: <%= @client.company_name %></p>
+  <p>案件: <%= @client.project %></p>
+  <p>備考: <%= @client.note %></p>
 
-  <h2><%= "追加情報" %></h2>
+  <h2>追加情報はこちら</h2>
 </body>
 </html>
