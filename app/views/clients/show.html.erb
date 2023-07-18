@@ -22,6 +22,6 @@
   <p>案件: <%= @client.project %></p>
   <p>備考: <%= @client.note %></p>
 
-  <h2>追加情報はこちら</h2>
+  <p><%= link_to "追加情報はこちら", client_client_details_path(@client) %></p>
 </body>
 </html>
