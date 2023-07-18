@@ -4,7 +4,7 @@
   <title>New Client</title>
 </head>
 <body>
-  <h1>New Client</h1>
+  <h1>顧客登録</h1>
   <%= form_with(model: @client) do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
     <div>
@@ -72,7 +72,7 @@
       <%= f.text_area :note %>
     </div>
     <div>
-      <%= f.submit "Create Client" %>
+      <%= f.submit "登録" %>
     </div>
   <% end %>
 </body>
