@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>New Client</title>
+</head>
+<body>
+  <h1>New Client</h1>
+  <%= form_with(model: @client) do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+    <div>
+      <%= f.label :client_firstname %>
+      <%= f.text_field :client_firstname %>
+    </div>
+    <div>
+      <%= f.label :client_lastname %>
+      <%= f.text_field :client_lastname %>
+    </div>
+    <div>
+      <%= f.label :client_firstname_kana %>
+      <%= f.text_field :client_firstname_kana %>
+    </div>
+    <div>
+      <%= f.label :client_lastname_kana %>
+      <%= f.text_field :client_lastname_kana %>
+    </div>
+    <div>
+      <%= f.label :birthday %>
+      <%= f.date_field :birthday %>
+    </div>
+    <div>
+      <%= f.label :gender_id %>
+      <%= f.select :gender_id, options_for_select(Gender.all.map { |gender| [gender.name, gender.id] }) %>
+    </div>
+    <div>
+      <%= f.label :post_code %>
+      <%= f.text_field :post_code %>
+    </div>
+    <div>
+      <%= f.label :prefecture_id %>
+      <%= f.select :prefecture_id, options_for_select(Prefecture.all.map { |prefecture| [prefecture.name, prefecture.id] }) %>
+    </div>
+    <div>
+      <%= f.label :municipality %>
+      <%= f.text_field :municipality %>
+    </div>
+    <div>
+      <%= f.label :address %>
+      <%= f.text_field :address %>
+    </div>
+    <div>
+      <%= f.label :building_name %>
+      <%= f.text_field :building_name %>
+    </div>
+    <div>
+      <%= f.label :phone_number %>
+      <%= f.text_field :phone_number %>
+    </div>
+    <div>
+      <%= f.label :mobile_number %>
+      <%= f.text_field :mobile_number %>
+    </div>
+    <div>
+      <%= f.label :company_name %>
+      <%= f.text_field :company_name %>
+    </div>
+    <div>
+      <%= f.label :project %>
+      <%= f.text_area :project %>
+    </div>
+    <div>
+      <%= f.label :note %>
+      <%= f.text_area :note %>
+    </div>
+    <div>
+      <%= f.submit "Create Client" %>
+    </div>
+  <% end %>
+</body>
+</html>
