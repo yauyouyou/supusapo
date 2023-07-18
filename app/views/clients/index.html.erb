@@ -8,7 +8,7 @@
   <div>
     <% @clients.each do |client| %>
       <div>
-        <%= link_to "#{client.client_lastname} #{client.client_firstname}", client_path(client) %>
+        <%= link_to "#{client.client_lastname} #{client.client_firstname}", client_path(client.id) %>
       </div>
     <% end %>
   </div>
