@@ -28,7 +28,7 @@
     </div>
     <div>
       <%= form.label :gender_id %>
-      <%= form.select :gender_id, options_for_select([["Male", 1], ["Female", 2]]) %>
+      <%= form.select :gender_id, options_for_select(Gender.all.map { |gender| [gender.name, gender.id] }) %>
     </div>
     <div>
       <%= form.label :post_code %>
@@ -36,7 +36,7 @@
     </div>
     <div>
       <%= form.label :prefecture_id %>
-      <%= form.select :prefecture_id, options_for_select([["Tokyo", 1], ["Osaka", 2], ["Kyoto", 3]]) %>
+      <%= form.select :prefecture_id, options_for_select(Prefecture.all.map { |prefecture| [prefecture.name, prefecture.id] }) %>
     </div>
     <div>
       <%= form.label :municipality %>
