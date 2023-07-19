@@ -21,6 +21,7 @@
     <% end %>
   </div>
 
-  <%= link_to '追加情報を登録する', new_client_client_detail_path(@client) %>
+  <p><%= link_to '追加情報を登録する', new_client_client_detail_path(@client) %></p>
+  <p><%= link_to '戻る', client_path(@client) %></p>
 </body>
 </html>
