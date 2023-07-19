@@ -24,6 +24,6 @@ class ClientDetailsController < ApplicationController
   private
 
   def client_detail_params
-    params.require(:client_detail).permit(fields_attributes: [:title, :content])
+    params.require(:client_detail).permit(:title, :content, fields_attributes: [:title, :content])
   end
 end
