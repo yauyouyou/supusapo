@@ -4,20 +4,14 @@
   <title>Client List</title>
 </head>
 <body>
-  <h1>Client List</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @clients.each do |client| %>
-        <tr>
-          <td><%= "#{client.client_lastname} #{client.client_firstname}" %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <h1>顧客一覧</h1>
+  <div>
+    <% @clients.each do |client| %>
+      <div>
+        <%= link_to "#{client.client_lastname} #{client.client_firstname}", client_path(client.id) %>
+      </div>
+    <% end %>
+  </div>
+  <p><%= link_to "顧客を追加する", new_client_path %></p>
 </body>
 </html>

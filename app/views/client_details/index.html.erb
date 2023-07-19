@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Client Details</title>
+</head>
+<body>
+  <h1><%= "#{@client.client_lastname}様の顧客情報" %></h1>
+
+  <h2>追加情報一覧</h2>
+
+  <div id="field-container">
+    <% @client_details.each do |detail| %>
+      <div>
+        <div>
+          <strong>タイトル:</strong> <%= detail.title %>
+        </div>
+        <div>
+          <strong>内容:</strong> <%= detail.content %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <p><%= link_to '追加情報を登録する', new_client_client_detail_path(@client) %></p>
+  <p><%= link_to '戻る', client_path(@client) %></p>
+</body>
+</html>
