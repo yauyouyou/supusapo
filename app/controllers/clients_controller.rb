@@ -38,6 +38,7 @@ class ClientsController < ApplicationController
   def destroy
     client = Client.find(params[:id])
     client.destroy
+    client.client_details.destroy_all
     redirect_to clients_path
   end
 
