@@ -29,7 +29,7 @@
     </div>
     <div>
       <%= f.label :gender_id, '性別' %>
-      <%= f.select :gender_id, options_for_select(Gender.all.map { |gender| [gender.name, gender.id] }) %>
+      <%= f.select :gender_id, options_for_select(Gender.all.map { |gender| [gender.name, gender.id] }, @client.gender_id) %>
     </div>
     <div>
       <%= f.label :post_code, '郵便番号' %>
@@ -37,7 +37,7 @@
     </div>
     <div>
       <%= f.label :prefecture_id, '都道府県' %>
-      <%= f.select :prefecture_id, options_for_select(Prefecture.all.map { |prefecture| [prefecture.name, prefecture.id] }) %>
+      <%= f.select :prefecture_id, options_for_select(Prefecture.all.map { |prefecture| [prefecture.name, prefecture.id] }, @client.prefecture_id) %>
     </div>
     <div>
       <%= f.label :municipality, '市区町村' %>

@@ -25,6 +25,16 @@ class ClientsController < ApplicationController
     @client = Client.find(params[:id])
   end
 
+  def update
+    @client = Client.find(params[:id])
+
+    if @client.update(client_params)
+      redirect_to client_path(@client), notice: 'クライアント情報が更新されました。'
+    else
+      render :edit
+    end
+  end
+
   
   private
   def client_params
