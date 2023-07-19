@@ -17,7 +17,7 @@ class ClientDetailsController < ApplicationController
     if @client_detail.save
       redirect_to client_client_details_path(@client)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

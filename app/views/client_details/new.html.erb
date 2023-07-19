@@ -6,19 +6,20 @@
 <body>
   <h1><%= "#{@client.client_lastname}様の追加情報を登録する" %></h1>
 
-  <%= form_with model: @client_detail, url: client_client_details_path(@client) do |form| %>
+  <%= form_with model: @client_detail, url: client_client_details_path(@client) do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
     <div>
       <label for="title">タイトル:</label>
-      <%= form.text_field :title, id: "title" %>
+      <%= f.text_field :title, id: "title" %>
     </div>
 
     <div>
       <label for="content">内容:</label>
-      <%= form.text_area :content, id: "content" %>
+      <%= f.text_area :content, id: "content" %>
     </div>
 
     <div>
-      <%= form.submit "登録する" %>
+      <%= f.submit "登録する" %>
     </div>
   <% end %>
 
