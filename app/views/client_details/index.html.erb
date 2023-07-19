@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Client Details</title>
+</head>
+<body>
+  <h1><%= "#{@client.client_lastname}様の顧客情報" %></h1>
+
+  <h2>追加情報</h2>
+
+  <div id="field-container">
+    <%= form_with(model: @client_detail, url: client_client_details_path(@client)) do |form| %>
+      <% @client_details.each do |detail| %>
+        <div>
+          <div>
+            <%= form.text_field "client_detail[fields_attributes][][title]", value: detail[:title] %>
+          </div>
+          <div>
+            <%= form.text_area "client_detail[fields_attributes][][content]", value: detail[:content] %>
+          </div>
+        </div>
+      <% end %>
+
+      <div>
+        <div>
+          <%= form.text_field "client_detail[fields_attributes][][title]" %>
+        </div>
+        <div>
+          <%= form.text_area "client_detail[fields_attributes][][content]" %>
+        </div>
+      </div>
+
+      <%= form.submit "保存" %>
+    <% end %>
+  </div>
+
+  <button type="button" onclick="addField()">項目を追加</button>
+
+  <script>
+    function addField() {
+      var fieldContainer = document.getElementById('field-container');
+      var fieldCount = fieldContainer.children.length;
+
+      var fieldTitle = document.createElement('input');
+      fieldTitle.setAttribute('type', 'text');
+      fieldTitle.setAttribute('name', "client[client_details_attributes][" + fieldCount + "][title]");
+
+      var fieldContent = document.createElement('textarea');
+      fieldContent.setAttribute('name', "client[client_details_attributes][" + fieldCount + "][content]");
+
+      var fieldDiv = document.createElement('div');
+      fieldDiv.appendChild(fieldTitle);
+      fieldDiv.appendChild(fieldContent);
+
+      fieldContainer.appendChild(fieldDiv);
+    }
+  </script>
+</body>
+</html>
