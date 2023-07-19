@@ -6,6 +6,7 @@ class ClientDetailsController < ApplicationController
   end
 
   def new
+    @client = Client.find(params[:client_id])
     @client_detail = ClientDetail.new
   end
 end
