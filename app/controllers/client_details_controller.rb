@@ -21,6 +21,10 @@ class ClientDetailsController < ApplicationController
     end
   end
 
+  def edit
+    @client = Client.find(params[:client_id])
+  end
+
   private
 
   def client_detail_params
