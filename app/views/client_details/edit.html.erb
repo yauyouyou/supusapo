@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>追加情報編集ページ</title>
+</head>
+<body>
+  <h1><%= "#{@client.client_lastname}様の追加情報を編集する" %></h1>
+
+  <%= form_with model: @client_detail, url: client_client_detail_path(@client, @client_detail), method: :patch do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+    <div>
+      <label for="title">タイトル:</label>
+      <%= f.text_field :title, id: "title" %>
+    </div>
+
+    <div>
+      <label for="content">内容:</label>
+      <%= f.text_area :content, id: "content" %>
+    </div>
+
+    <div>
+      <%= f.submit "更新する" %>
+    </div>
+  <% end %>
+
+  <%= link_to '戻る', client_client_details_path(@client) %>
+</body>
+</html>

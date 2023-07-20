@@ -21,6 +21,22 @@ class ClientDetailsController < ApplicationController
     end
   end
 
+  def edit
+    @client = Client.find(params[:client_id])
+    @client_detail = @client.client_details.find(params[:id])
+  end
+
+  def update
+    @client = Client.find(params[:client_id])
+    @client_detail = @client.client_details.find(params[:id])
+
+    if @client_detail.update(client_detail_params)
+      redirect_to client_client_details_path(@client)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def client_detail_params
