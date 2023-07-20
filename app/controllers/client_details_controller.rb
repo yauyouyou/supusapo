@@ -15,6 +15,7 @@ class ClientDetailsController < ApplicationController
   def create
     @client = Client.find(params[:client_id])
     @client_detail = @client.client_details.build(client_detail_params)
+    @client_detail.user = current_user
 
     if @client_detail.save
       redirect_to client_client_details_path(@client)
@@ -47,6 +48,10 @@ class ClientDetailsController < ApplicationController
   end
 
   private
+
+  def client_detail_params
+    params.require(:client_detail).permit(:title, :content, :user_id)
+  end
 
   def client_detail_params
     params.require(:client_detail).permit(:title, :content)
