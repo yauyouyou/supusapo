@@ -1,4 +1,6 @@
 class ClientDetailsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @client = Client.find(params[:client_id])
     @client_details = @client.client_details
@@ -48,5 +50,9 @@ class ClientDetailsController < ApplicationController
 
   def client_detail_params
     params.require(:client_detail).permit(:title, :content)
+  end
+
+  def authenticate_user!
+    redirect_to new_user_session_path unless user_signed_in?
   end
 end

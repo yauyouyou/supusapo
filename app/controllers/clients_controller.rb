@@ -1,4 +1,6 @@
 class ClientsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @clients = Client.all
   end
@@ -46,6 +48,10 @@ class ClientsController < ApplicationController
   private
   def client_params
     params.require(:client).permit(:client_firstname, :client_lastname, :client_firstname_kana, :client_lastname_kana, :birthday, :gender_id, :post_code, :prefecture_id, :municipality, :address, :building_name, :phone_number, :mobile_number, :company_name, :project, :note)
+  end
+
+  def authenticate_user!
+    redirect_to new_user_session_path unless user_signed_in?
   end
 
 end
