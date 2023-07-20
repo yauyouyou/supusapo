@@ -21,17 +21,23 @@ class ClientsController < ApplicationController
 
   def show
     @client = Client.find(params[:id])
+    if @client.user != current_user
+      redirect_to clients_path
+    end
   end
 
   def edit
     @client = Client.find(params[:id])
+    if @client.user != current_user
+      redirect_to clients_path
+    end
   end
 
   def update
     @client = Client.find(params[:id])
 
     if @client.update(client_params)
-      redirect_to client_path(@client), notice: 'クライアント情報が更新されました。'
+      redirect_to client_path(@client)
     else
       render :edit, status: :unprocessable_entity
     end
