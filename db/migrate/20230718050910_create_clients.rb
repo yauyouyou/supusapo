@@ -17,6 +17,7 @@ class CreateClients < ActiveRecord::Migration[7.0]
       t.string    :company_name
       t.text      :project
       t.text      :note
+      
 
       t.timestamps
     end
