@@ -17,6 +17,9 @@
         <div>
           <strong>内容:</strong> <%= detail.content %>
         </div>
+        <div>
+          <%= link_to '編集', edit_client_client_detail_path(@client, detail) %>
+        </div>
       </div>
     <% end %>
   </div>
