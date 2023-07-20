@@ -23,6 +23,7 @@ class ClientDetailsController < ApplicationController
 
   def edit
     @client = Client.find(params[:client_id])
+    @client_detail = @client.client_details.find(params[:id])
   end
 
   private
