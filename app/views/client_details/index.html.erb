@@ -19,6 +19,7 @@
         </div>
         <div>
           <%= link_to '編集', edit_client_client_detail_path(@client, detail) %>
+          <%= link_to '削除', client_client_detail_path(@client, detail), method: :delete, data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' } %>
         </div>
       </div>
     <% end %>
