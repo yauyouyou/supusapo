@@ -31,7 +31,7 @@ class ClientsController < ApplicationController
     if @client.update(client_params)
       redirect_to client_path(@client), notice: 'クライアント情報が更新されました。'
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
