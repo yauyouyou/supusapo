@@ -29,13 +29,18 @@ class ClientDetailsController < ApplicationController
         render :new, status: :unprocessable_entity
       end
     else
-      redirect_to new_user_session_path, alert: "このクライアントの詳細情報にアクセスする権限がありません。"
+      redirect_to new_user_session_path
     end
   end
 
   def edit
     @client = Client.find(params[:client_id])
-    @client_detail = @client.client_details.find(params[:id])
+  
+    if @client.user == current_user
+      @client_detail = @client.client_details.find(params[:id])
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def update
