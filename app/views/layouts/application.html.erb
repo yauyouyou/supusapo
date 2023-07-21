@@ -12,6 +12,7 @@
 
 <body>
   <div id="header">
+    <div>すぷさぽ</div>
     <% if user_signed_in? %>
       <span><%= current_user.last_name %>様</span>
       <% unless current_page?(home_index_path) %>
