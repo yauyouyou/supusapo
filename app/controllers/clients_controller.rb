@@ -3,6 +3,7 @@ class ClientsController < ApplicationController
   
   def index
     @clients = current_user.clients
+    @clients = sort_by_name(@clients)
   end
 
   def new
@@ -48,6 +49,15 @@ class ClientsController < ApplicationController
     client.destroy
     client.client_details.destroy_all
     redirect_to clients_path
+  end
+
+  def sort_by_name(clients = [])
+    origin = "ａ-ｚＡ-Ｚァ-ン０-９ぁぃぅぇぉがぎぐげござじずぜぞだぢづでどばびぶべぼぱぴぷぺぽゃゅょっゎァィゥェォガギグゲゴザジズゼゾダヂヅデドバビブベボパピプペポャュョッヮ"
+    normalize = "a-zA-Zぁ-ん0-9あいうえおかきくけこさしすせそたちつてとはひふへほはひふへほやゆよつわあいうえおかきくけこさしすせそたちつてとはひふへほはひふへほやゆよつわ"
+
+    clients.sort_by do |client|
+      [client.client_lastname_kana.tr(origin, normalize), client.client_firstname_kana.tr(origin, normalize)]
+    end
   end
 
   
