@@ -1,10 +1,14 @@
 class ClientDetailsController < ApplicationController
   before_action :authenticate_user!
+  before_action :find_client, only: [:index]
 
   def index
-    @client = Client.find(params[:client_id])
-    @client_details = @client.client_details
-    @client_detail = ClientDetail.new
+    if @client
+      @client_details = @client.client_details
+      @client_detail = ClientDetail.new
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def new
@@ -14,13 +18,18 @@ class ClientDetailsController < ApplicationController
 
   def create
     @client = Client.find(params[:client_id])
-    @client_detail = @client.client_details.build(client_detail_params)
-    @client_detail.user = current_user
-
-    if @client_detail.save
-      redirect_to client_client_details_path(@client)
+  
+    if @client.user == current_user
+      @client_detail = @client.client_details.build(client_detail_params)
+      @client_detail.user = current_user
+  
+      if @client_detail.save
+        redirect_to client_client_details_path(@client)
+      else
+        render :new, status: :unprocessable_entity
+      end
     else
-      render :new, status: :unprocessable_entity
+      redirect_to new_user_session_path, alert: "このクライアントの詳細情報にアクセスする権限がありません。"
     end
   end
 
@@ -50,14 +59,10 @@ class ClientDetailsController < ApplicationController
   private
 
   def client_detail_params
-    params.require(:client_detail).permit(:title, :content, :user_id)
-  end
-
-  def client_detail_params
     params.require(:client_detail).permit(:title, :content)
   end
 
-  def authenticate_user!
-    redirect_to new_user_session_path unless user_signed_in?
+  def find_client
+    @client = Client.find_by(id: params[:client_id], user_id: current_user.id)
   end
 end
