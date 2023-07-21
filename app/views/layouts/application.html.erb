@@ -15,6 +15,7 @@
     <% if user_signed_in? %>
       <span><%= current_user.last_name %>様</span>
     <% end %>
+    <%= link_to "トップページに戻る", home_index_path %>
     <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { turbo_method: :delete } if user_signed_in? %>
   </div>
 

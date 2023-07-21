@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :clients do
     resources :client_details
   end
+
+  get 'home/index'
 end
