@@ -4,6 +4,8 @@ class CreateClientDetails < ActiveRecord::Migration[7.0]
       t.string    :title, null: false
       t.text      :content
 
+      
+
       t.timestamps
     end
   end

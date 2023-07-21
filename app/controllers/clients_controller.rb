@@ -1,6 +1,8 @@
 class ClientsController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
-    @clients = Client.all
+    @clients = current_user.clients
   end
 
   def new
@@ -8,7 +10,7 @@ class ClientsController < ApplicationController
   end
 
   def create
-    @client = Client.new(client_params)
+    @client = current_user.clients.build(client_params)
 
     if @client.save
       redirect_to root_path
@@ -19,17 +21,23 @@ class ClientsController < ApplicationController
 
   def show
     @client = Client.find(params[:id])
+    if @client.user != current_user
+      redirect_to clients_path
+    end
   end
 
   def edit
     @client = Client.find(params[:id])
+    if @client.user != current_user
+      redirect_to clients_path
+    end
   end
 
   def update
     @client = Client.find(params[:id])
 
     if @client.update(client_params)
-      redirect_to client_path(@client), notice: 'クライアント情報が更新されました。'
+      redirect_to client_path(@client)
     else
       render :edit, status: :unprocessable_entity
     end

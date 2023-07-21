@@ -1,5 +1,6 @@
 class Client < ApplicationRecord
   has_many :client_details
+  belongs_to :user
 
   validates :client_firstname, presence: true
   validates :client_firstname, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: 'は全角（漢字・ひらがな・カタカナ）で入力してください' }
