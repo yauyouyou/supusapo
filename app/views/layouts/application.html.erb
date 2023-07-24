@@ -24,7 +24,7 @@
       margin: 15px 15px;
       background-color: #CCCCCC;
       z-index: 2; /* ヘッダーを手前に表示 */
-      border-radius: 10px;
+      
     }
 
     .header-content {
@@ -180,9 +180,9 @@
         <div class="user-info">
           <span><%= current_user.last_name %>様</span>
           <% unless current_page?(home_index_path) %>
-            <%= link_to "トップページに戻る", home_index_path %>
+            <%= link_to "トップページに戻る", home_index_path, class: "btn-white" %>
           <% end %>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "btn-white" %>
         </div>
       <% end %>
     </div>
