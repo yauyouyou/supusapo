@@ -2,9 +2,11 @@
 <html>
   <head>
     <title>トップページ</title>
+    <%= stylesheet_link_tag "home" %>
   </head>
   <body>
-    <h1>ようこそ、トップページへ！</h1>
-    <%= link_to '顧客一覧ページへ', clients_path %>
-  </body>
+    <h1 class="welcome-title">ようこそ！</h1>
+    <div class="clients_all">
+      <%= link_to '顧客一覧ページへ', clients_path, class: "button" %>
+    </div>
 </html>
