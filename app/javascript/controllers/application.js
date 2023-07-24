@@ -7,3 +7,8 @@ application.debug = false
 window.Stimulus   = application
 
 export { application }
+
+/*
+Background Gradients From -- 
+https://uigradients.com
+*/
