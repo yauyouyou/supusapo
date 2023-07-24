@@ -11,7 +11,7 @@
     <% @clients.each do |client| %>
       <% if current_row != client.client_lastname_kana[0] %>
         <% current_row = client.client_lastname_kana[0] %>
-        <h2><%= current_row %>行</h2>
+        <h2><%= current_row %></h2>
       <% end %>
       <div>
         <%= link_to "#{client.client_lastname} #{client.client_firstname}", client_path(client.id) %>
