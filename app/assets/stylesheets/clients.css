@@ -1,6 +1,6 @@
 body {
   color: #333;
-  margin: 100px;
+  margin: 100px 50px;
 }
 
 h1 {
@@ -32,6 +32,99 @@ a:hover {
   position: absolute;
   top: 5px;
   right: 10px;
+}
+
+.top-right a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgba(112, 200, 250, 0.7);
+  color: #000000;
+  border: 1px solid rgba(112, 200, 250, 0.7)F;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+
+
+
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.name-fields {
+  width: 100px;
+  padding: 5px;
+  margin-right: 60px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.form-group input[type="text"] {
+  width: 120px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.form-group input[type="date"] {
+  width: 120px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.form-group select {
+  width: 120px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.form-group textarea {
+  width: 600px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.form-group
+.long-input {
+  width: 350px !important;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* ラベルのスタイル */
+.form-group label {
+  font-size: 20px;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* 登録ボタンのスタイル */
+.form-group input[type="submit"] {
+  background-color: rgba(112, 200, 250, 0.7);
+  color: #000000;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .top-right a {
