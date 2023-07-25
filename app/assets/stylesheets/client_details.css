@@ -1,0 +1,85 @@
+#field-container div {
+  max-width: 800px; /* タイトルとコンテンツの最大幅を指定 */
+  margin-bottom: 10px; /* 各detail要素の下に余白を追加 */
+  padding: 10px; /* 各detail要素の内側に余白を追加 */
+  border-radius: 5px; /* 枠線の角を丸くする */
+  background-color: white; /* 背景色を白に設定 */
+}
+
+/* タイトル要素のスタイル */
+#field-container div .title {
+  font-size: 25px; /* タイトルのフォントサイズを調整 */
+  border-bottom: 1px solid #ccc; /* 上段と下段を横線で区切る */
+  padding-bottom: 5px; /* タイトルと横線の間の余白を追加 */
+  font-weight: bold;
+}
+
+/* コンテンツ要素のスタイル */
+#field-container div .content {
+  font-size: 20px; /* コンテンツのフォントサイズを調整 */
+}
+
+/* 編集・削除リンク要素のスタイル */
+#field-container div div:nth-child(3) {
+  margin-top: 45px; /* 編集・削除リンクと内容の間にスペースを追加 */
+  font-size: 14px;
+}
+
+/* リンクのスタイル */
+#field-container a {
+  background-color: rgba(112, 200, 250, 0.7);
+  color: #000000;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none; /* 下線を削除 */
+  margin-right: 10px; /* リンク間にスペースを追加 */
+}
+
+/* ホバーエフェクト */
+#field-container a:hover {
+  background-color: #6495ED; /* ホバー時の背景色を設定 */
+}
+
+/* アクティブエフェクト */
+#field-container a:active {
+  background-color: #003d80; /* アクティブ時の背景色を設定 */
+}
+
+/* 余白を追加するためのスタイル */
+#field-container {
+  margin-top: 20px; /* タイトルとの間に余白を追加 */
+}
+
+/* フォーム全体の最大幅を指定 */
+body {
+  max-width: 800px; /* 顧客情報フォームの最大幅を指定 */
+  margin: 0 auto; /* ページ中央に配置 */
+  padding: 10px; /* フォームの周囲に余白を追加 */
+  background-color: #f7f7f7; /* 背景色を設定 */
+}
+
+.top-right {
+  position: fixed;
+  top: 100px; /* Adjust the top position to align with your preferred spacing */
+  right: 70px;
+  z-index: 9999;
+}
+
+.top-right a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgba(112, 200, 250, 0.7);
+  color: #000000;
+  border: 1px solid rgba(112, 200, 250, 0.7)F;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.top-right a:hover {
+  background-color: #6495ED; /* Example hover background color (you can customize this) */
+}
+
+.top-right a:active {
+  background-color: #6495ED; /* Example active background color (you can customize this) */
+}
