@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Client Details</title>
+  <%= stylesheet_link_tag "clients" %>
 </head>
 <body>
   <h1><%= "#{@client.client_lastname}様の顧客情報" %></h1>
@@ -22,9 +23,11 @@
   <p>案件: <%= @client.project %></p>
   <p>備考: <%= @client.note %></p>
 
-  <p><%= link_to "追加情報はこちら", client_client_details_path(@client) %></p>
-  <p><%= link_to "編集する", edit_client_path(@client) %></p>
-  <p><%= link_to "削除する", client_path(@client), data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' } %></p>
-  <p><%= link_to "戻る", clients_path %></p>
+  <div class="button-container">
+    <p><%= link_to "追加情報はこちら", client_client_details_path(@client) %></p>
+    <p><%= link_to "編集する", edit_client_path(@client) %></p>
+    <p><%= link_to "削除する", client_path(@client), data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' } %></p>
+    <p><%= link_to "戻る", clients_path %></p>
+  </div>
 </body>
 </html>

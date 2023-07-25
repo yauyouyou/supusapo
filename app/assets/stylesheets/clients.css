@@ -127,6 +127,13 @@ a:hover {
   cursor: pointer;
 }
 
+.form-group input[type="submit"]:hover {
+  background-color: #6495ED; /* ホバー時の背景色を変更（カスタマイズ可能） */
+}
+
+.form-group input[type="submit"]:active {
+  background-color: #0056b3; /* クリック時の背景色を変更（カスタマイズ可能） */
+}
 .top-right a {
   display: inline-block;
   padding: 10px 20px;
@@ -136,4 +143,40 @@ a:hover {
   border-radius: 5px;
   text-decoration: none;
   margin-right: 5px;
+}
+
+.top-right a:hover {
+  background-color: #6495ED; /* Example hover background color (you can customize this) */
+}
+
+.top-right a:active {
+  background-color: #6495ED; /* Example active background color (you can customize this) */
+}
+
+.button-container {
+  position: fixed;
+  top: 100px; /* Adjust the top position to align with your preferred spacing */
+  right: 70px; /* Adjust the right position to align with your preferred spacing */
+  z-index: 9999; /* Ensure the buttons stay on top of other elements */
+}
+
+/* Optionally, add some styles to the buttons for better appearance */
+.button-container a {
+  display: block;
+  margin-bottom: 10px; /* Add some vertical spacing between buttons */
+  background-color: rgba(112, 200, 250, 0.7);
+  color: #000000; /* Example text color (you can customize this) */
+  padding: 10px 20px; /* Add some padding to the buttons */
+  border-radius: 5px; /* Round the button corners */
+  text-decoration: none; /* Remove underlines from links */
+}
+
+/* Add some hover effect to the buttons */
+.button-container a:hover {
+  background-color: #6495ED; /* Example hover background color (you can customize this) */
+}
+
+/* Optionally, add some styles to the buttons when they are pressed */
+.button-container a:active {
+  background-color: #6495ED; /* Example active background color (you can customize this) */
 }
