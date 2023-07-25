@@ -45,8 +45,8 @@
       <%= f.select :prefecture_id, options_for_select(Prefecture.all.map { |prefecture| [prefecture.name, prefecture.id] }, @client.prefecture_id) %>
     </div>
     <div class="form-group">
-      <label for="municipality">市区町村</label>
-      <input type="text" id="municipality" name="municipality" class="long-input" placeholder="例: 東京都渋谷区">
+      <%= f.label :municipality, '市区町村' %>
+      <%= f.text_field :municipality, class: "long-input" %>
     </div>
     <div class="form-group">
       <%= f.label :address, '番地' %>
