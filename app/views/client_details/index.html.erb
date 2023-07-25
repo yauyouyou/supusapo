@@ -13,10 +13,10 @@
     <% @client_details.each do |detail| %>
       <div>
         <div class="title">
-          <strong></strong> <%= detail.title %>
+          <%= detail.title %>
         </div>
         <div class="content">
-          <strong></strong> <%= detail.content %>
+          <%= detail.content %>
         </div>
         <div>
           <%= link_to '編集', edit_client_client_detail_path(@client, detail) %>

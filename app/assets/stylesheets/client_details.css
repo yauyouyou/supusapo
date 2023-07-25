@@ -60,7 +60,7 @@ body {
 
 .top-right {
   position: fixed;
-  top: 100px; /* Adjust the top position to align with your preferred spacing */
+  top: 120px; /* Adjust the top position to align with your preferred spacing */
   right: 70px;
   z-index: 9999;
 }
@@ -82,4 +82,60 @@ body {
 
 .top-right a:active {
   background-color: #6495ED; /* Example active background color (you can customize this) */
+}
+
+
+
+
+h2 {
+  font-size: 35px;
+}
+form {
+  max-width: 800px; /* フォームの最大幅を指定 */
+  margin:200px auto; /* ページ中央に配置 */
+  padding: 20px; /* フォームの周囲に余白を追加 */
+  background-color: #f7f7f7; /* 背景色を設定 */
+  border-radius: 5px; /* 枠線の角を丸くする */
+}
+
+/* 各入力項目のスタイル */
+form div {
+  margin-bottom: 20px; /* 各入力項目の下に余白を追加 */
+}
+
+/* ラベルのスタイル */
+form label {
+  display: block; /* ラベルをブロック要素に変更して上下に配置 */
+  font-size: 30px; /* ラベルのフォントサイズを調整 */
+}
+
+/* テキストフィールドのスタイル */
+form input[type="text"],
+form textarea {
+  width: 100%; /* テキストフィールドの幅を100%に設定 */
+  padding: 5px; /* テキストフィールドの内側に余白を追加 */
+  font-size: 20px; /* テキストフィールドのフォントサイズを調整 */
+  border: 1px solid #ccc; /* テキストフィールドの枠線を追加 */
+  border-radius: 5px; /* 枠線の角を丸くする */
+}
+
+/* 登録ボタンのスタイル */
+form input[type="submit"] {
+  background-color: rgba(112, 200, 250, 0.7);
+  color: #000000;
+  padding: 5px 10px;
+  font-size: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px 20px;
+}
+
+/* 登録ボタンのホバーエフェクト */
+form input[type="submit"]:hover {
+  background-color: #6495ED;
+}
+
+.form-submit {
+  text-align: right;
 }
