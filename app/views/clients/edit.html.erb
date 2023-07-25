@@ -2,79 +2,84 @@
 <html>
 <head>
   <title>Edit Client</title>
+  <%= stylesheet_link_tag "clients" %>
 </head>
 <body>
   <h1>顧客情報編集</h1>
   <%= form_with(model: @client) do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
-    <div>
-      <%= f.label :client_lastname, '姓' %>
-      <%= f.text_field :client_lastname %>
+    <div class="form-group">
+      <div class="name-fields">
+        <%= f.label :client_lastname, '姓' %>
+        <%= f.text_field :client_lastname %>
+      </div>
+      <div class="name-fields">
+        <%= f.label :client_firstname, '名' %>
+        <%= f.text_field :client_firstname %>
+      </div>
     </div>
-    <div>
-      <%= f.label :client_firstname, '名' %>
-      <%= f.text_field :client_firstname %>
+    <div class="form-group">
+      <div class="name-fields">
+        <%= f.label :client_lastname_kana, 'セイ' %>
+        <%= f.text_field :client_lastname_kana %>
+      </div>
+      <div class="name-fields">
+        <%= f.label :client_firstname_kana, 'メイ' %>
+        <%= f.text_field :client_firstname_kana %>
+      </div>
     </div>
-    <div>
-      <%= f.label :client_lastname_kana, 'セイ' %>
-      <%= f.text_field :client_lastname_kana %>
-    </div>
-    <div>
-      <%= f.label :client_firstname_kana, 'メイ' %>
-      <%= f.text_field :client_firstname_kana %>
-    </div>
-    <div>
+    <div class="form-group">
       <%= f.label :birthday, '生年月日' %>
-      <%= f.date_field :birthday %>
+      <%= f.text_field :birthday, type: "date" %>
     </div>
-    <div>
+    <div class="form-group">
       <%= f.label :gender_id, '性別' %>
       <%= f.select :gender_id, options_for_select(Gender.all.map { |gender| [gender.name, gender.id] }, @client.gender_id) %>
     </div>
-    <div>
+    <div class="form-group">
       <%= f.label :post_code, '郵便番号' %>
       <%= f.text_field :post_code %>
     </div>
-    <div>
+    <div class="form-group">
       <%= f.label :prefecture_id, '都道府県' %>
       <%= f.select :prefecture_id, options_for_select(Prefecture.all.map { |prefecture| [prefecture.name, prefecture.id] }, @client.prefecture_id) %>
     </div>
-    <div>
+    <div class="form-group">
       <%= f.label :municipality, '市区町村' %>
-      <%= f.text_field :municipality %>
+      <%= f.text_field :municipality, class: "long-input" %>
     </div>
-    <div>
+    <div class="form-group">
       <%= f.label :address, '番地' %>
-      <%= f.text_field :address %>
+      <%= f.text_field :address, class: "long-input" %>
     </div>
-    <div>
+    <div class="form-group">
       <%= f.label :building_name, '建物名' %>
-      <%= f.text_field :building_name %>
+      <%= f.text_field :building_name, class: "long-input" %>
     </div>
-    <div>
+    <div class="form-group">
       <%= f.label :phone_number, 'ご自宅番号' %>
       <%= f.text_field :phone_number %>
     </div>
-    <div>
+    <div class="form-group">
       <%= f.label :mobile_number, '携帯番号' %>
       <%= f.text_field :mobile_number %>
     </div>
-    <div>
+    <div class="form-group">
       <%= f.label :company_name, '会社名' %>
-      <%= f.text_field :company_name %>
+      <%= f.text_field :company_name, class: "long-input" %>
     </div>
-    <div>
+    <div class="form-group">
       <%= f.label :project, '案件' %>
       <%= f.text_area :project %>
     </div>
-    <div>
+    <div class="form-group">
       <%= f.label :note, '備考' %>
       <%= f.text_area :note %>
     </div>
-    <div>
+    <div class="form-group">
       <%= f.submit "更新" %>
     </div>
-    <div>
+    <div class="top-right">
       <%= link_to "戻る", client_path(@client) %>
     </div>
   <% end %>
