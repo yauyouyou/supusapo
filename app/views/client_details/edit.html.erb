@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>追加情報編集ページ</title>
+  <%= stylesheet_link_tag "client_details" %>
 </head>
 <body>
   <h1><%= "#{@client.client_lastname}様の追加情報を編集する" %></h1>
@@ -23,6 +24,8 @@
     </div>
   <% end %>
 
-  <%= link_to '戻る', client_client_details_path(@client) %>
+  <div class="top-right">
+    <%= link_to '戻る', client_client_details_path(@client) %>
+  </div>
 </body>
 </html>
