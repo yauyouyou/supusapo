@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Client Details</title>
+  <%= stylesheet_link_tag "client_details" %>
 </head>
 <body>
   <h1><%= "#{@client.client_lastname}様の顧客情報" %></h1>
@@ -11,11 +12,11 @@
   <div id="field-container">
     <% @client_details.each do |detail| %>
       <div>
-        <div>
-          <strong>タイトル:</strong> <%= detail.title %>
+        <div class="title">
+          <strong></strong> <%= detail.title %>
         </div>
-        <div>
-          <strong>内容:</strong> <%= detail.content %>
+        <div class="content">
+          <strong></strong> <%= detail.content %>
         </div>
         <div>
           <%= link_to '編集', edit_client_client_detail_path(@client, detail) %>
