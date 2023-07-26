@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_20_134401) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_26_082703) do
   create_table "client_details", charset: "utf8", force: :cascade do |t|
     t.string "title", null: false
     t.text "content"
@@ -44,6 +44,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_20_134401) do
     t.index ["user_id"], name: "index_clients_on_user_id"
   end
 
+  create_table "schedules", charset: "utf8", force: :cascade do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "client_id", null: false
+    t.index ["client_id"], name: "index_schedules_on_client_id"
+  end
+
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -60,4 +71,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_20_134401) do
 
   add_foreign_key "client_details", "users"
   add_foreign_key "clients", "users"
+  add_foreign_key "schedules", "clients"
 end
