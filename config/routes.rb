@@ -1,3 +1,4 @@
+# config/routes.rb
 Rails.application.routes.draw do
   devise_for :users
   root to: 'clients#index'
@@ -5,6 +6,9 @@ Rails.application.routes.draw do
     resources :client_details
   end
   resources :schedules
+
+  # スケジュールコントローラのindexアクションにGETリクエストを設定する
+  get 'schedule/index', to: 'schedules#index'
 
   get 'home/index'
 end

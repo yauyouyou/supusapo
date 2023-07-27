@@ -1,42 +1,53 @@
-# テーブル設計 
+## アプリケーション名  
+すぷさぽ  
+## アプリケーション概要  
+顧客を登録し、顧客の基本情報（名前、生年月日、住所など）に加えて、追加情報（特長、会話の内容など）を登録することができ、営業活動を行う時に顧客の情報を細かく保存しておくことができる。  
+## URL  
+https://supusapo.onrender.com/  
+## テスト用アカウント  
+・メールアドレス：a@a  
+・パスワード：111aaa  
+## 利用方法  
+### ログイン・新規登録  
+メールアドレス、パスワードを入力し、ログインする。または、姓名、メールアドレス、パスワードを入力し、新規登録する  
+### 顧客の基本情報を登録  
+顧客一覧ページから、姓名、生年月日、住所などを入力して、基本情報として保存する  
+### 顧客の追加情報を登録  
+顧客の詳細ページから、追加情報一覧に遷移し、追加情報登録をクリックして顧客と会話した内容や見た目の特長を自分で好きなように入力し、保存する  
+## アプリケーションを作成した背景  
+前職の営業で、顧客の見た目や会話の内容、顧客同士の友好関係など覚えておかなければいけないことが多くあった。しかし、紙にメモしていると、どこに何を書いたか確認するのにも時間がかかり、まとめようとすると、さらに時間を要した。何より、顧客の情報をメモした紙を自分で管理することは、セキュリティの面でも不安である。そこで、アプリケーションで顧客の生年月日、住所などの情報だけではなく、見た目や会話の内容、顧客同士の友好関係などを自由に書けて、一覧で分かりやすく見ることができるアプリケーションを開発した。
+## 洗い出した要件  
+[要件を定義したシート](https://docs.google.com/spreadsheets/d/1ZDesyKL5PN90T8bgvZ9KVIvTbc7eusrBBrLQ42aG1SI/edit#gid=982722306)
+## 実装した機能についての画像やGIFおよびその説明  
+[![Image from Gyazo](https://i.gyazo.com/8625c95b346fbda02bae8fa1dee29482.png)](https://gyazo.com/8625c95b346fbda02bae8fa1dee29482)  
+### 説明  
+上記画像の右にある「追加情報を登録する」ボタンをクリックし、情報を入力し、画像のように顧客の追加情報を一覧で見ることができる。
+## 実装予定の機能    
+現在、アプリ名のロゴとビューを実装中  
+今後はスケジュール管理機能を実装予定  
+## データベース設計  
+[![Image from Gyazo](https://i.gyazo.com/015b25faf8eeaaa96888da175091d87c.png)](https://gyazo.com/015b25faf8eeaaa96888da175091d87c)
+## 画面遷移図  
+[![Image from Gyazo](https://i.gyazo.com/3c8a810fc5dd0f278e99678e77570554.png)](https://gyazo.com/3c8a810fc5dd0f278e99678e77570554)
+## 開発環境  
+・Ruby  
+・Ruby on Rails  
+・JavaScript  
+・MySQL  
+・Github  
+・Render  
+・Visual Studio Code
+## ローカルでの動作確認  
+% git clone https://github.com/yauyouyou/supusapo.git  
+% cd supusapo  
+% rm -rf .git  
+% bundle install  
+% rails db:create  
+% rails db:migrate  
+## 工夫したポイント  
+自分が学習したことと、前職で経験したこと両方を活かせるアプリケーションを考えた。  
+工夫したポイントは、ほぼ全てのページに「戻る」ボタンを実装して使いやすくして点と、顧客と顧客追加情報を削除する際に「本当に削除しますか」という確認が表示されるようにし、万が一にも誤って削除されないようにした点である。
 
-## users テーブル 
 
-| Column                  | Type    | Options     | 
-| ----------------------- | ------- | ----------- | 
-| firstname               | string  | null: false | 
-| lastname                | string  | null: false | 
-| email                   | string  | null: false,unique: true | 
-| encrypted_password      | string  | null: false | 
-
-### Association 
-
-- has_many :clients
-
-
-## clientsテーブル
-
-| Column                  | Type    | Options     | 
-| ------------------------| --------| ------------| 
-| client_firstname        | string  | null: false | 
-| client_lastname         | string  | null: false | 
-| client_firstname_kana   | string  | null: false |
-| client_lastname_kana    | string  | null: false |
-| birthday                | date    | null: false | 
-| gender_id               | integer | null: false |
-| post_code               | string  | null: false | 
-| prefecture_id           | integer | null: false |
-| municipality            | string  | null: false |
-| address                 | string  | null: false |
-| building_name           | string  |             |
-| phone_number            | string  |             |
-| mobile_number           | string  |             |
-| company_name            | string  |             |
-| project                 | text    |             |
-| note                    | text    |             |
-
-### Association 
-
-- belongs_to :user
 
 
