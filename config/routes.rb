@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :clients do
     resources :client_details
   end
-
+  resources :events
   get 'home/index'
 end
