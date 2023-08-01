@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_20_134401) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_01_015715) do
+  create_table "calendars", charset: "utf8", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "client_details", charset: "utf8", force: :cascade do |t|
     t.string "title", null: false
     t.text "content"
