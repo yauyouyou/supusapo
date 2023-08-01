@@ -6,9 +6,5 @@ Rails.application.routes.draw do
     resources :client_details
   end
 
-
-  # スケジュールコントローラのindexアクションにGETリクエストを設定する
-  get 'schedule/index', to: 'schedules#index'
-
   get 'home/index'
 end
