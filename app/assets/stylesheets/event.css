@@ -1,0 +1,41 @@
+.simple-calendar .day {
+  width: 200px; /* 固定の横幅を設定 */
+  height: 100px; /* 固定の高さを設定 */
+  border: 1px solid #ddd;
+  text-align: center;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+/* カレンダーの日付セルの背景色（イベントなし） */
+.simple-calendar .day.empty {
+  background-color: #f9f9f9;
+}
+
+/* カレンダーの日付セルの背景色（イベントあり） */
+.simple-calendar .day.has-events {
+  background-color: rgba(112, 200, 250, 0.7);
+}
+
+/* カレンダーの日付セルの日付のスタイル */
+.simple-calendar .day strong {
+  display: block;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 5px; /* 日付の上の余白を設定 */
+}
+
+/* イベントのタイトルのスタイル */
+.simple-calendar .event-title {
+  font-weight: bold;
+  font-size: 18px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* イベントのコンテンツのスタイル */
+.simple-calendar .event-content {
+  margin-top: 6px;
+  color: #555;
+  font-size: 16px;
+}
