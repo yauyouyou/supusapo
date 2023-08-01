@@ -1,3 +1,7 @@
+class ApplicationRecord < ActiveRecord::Base
+  self.abstract_class = true
+end
+
 class User < ApplicationRecord
   has_many :clients
   has_many :client_details
