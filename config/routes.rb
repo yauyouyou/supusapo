@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :clients do
     resources :client_details
   end
-  resources :calendars
-  
+
   get 'home/index'
 end
