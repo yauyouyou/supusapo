@@ -6,10 +6,8 @@
   </head>
   <body>
     <h1 class="welcome-title">ようこそ！</h1>
-    <div class="clients_all">
-      <%= link_to '顧客一覧ページへ', clients_path, class: "button" %>
-    </div>
-    <div class="events_all">
-      <%= link_to 'スケジュールへ', events_path, class: "button" %>
+    <div class="button-container">
+     <%= link_to '顧客一覧ページへ', clients_path, class: "button" %>
+     <%= link_to 'スケジュールへ', events_path, class: "button" %>
     </div>
 </html>
